@@ -1,4 +1,4 @@
-package ObsługaPlikówJSON;
+package obsluga_plikow_json;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -32,7 +32,7 @@ public class SerializatorJSON {
                     .registerSubtype(Zmienna.class);
 
     private static final Gson gson_read = new GsonBuilder().registerTypeAdapterFactory(adapter).create();
-    private static final Gson gson_write = new GsonBuilder().create();
+    private static final Gson gson_write = new GsonBuilder().setPrettyPrinting().create();
 
     public ElementJęzyka fromJson(String json) {
         return gson_read.fromJson(json, ElementJęzyka.class);

@@ -1,4 +1,4 @@
-import ObsługaPlikówJSON.SerializatorJSON;
+import obsluga_plikow_json.SerializatorJSON;
 import elementy_jezyka.BladWykonania;
 import elementy_jezyka.ElementJęzyka;
 
@@ -34,12 +34,13 @@ public class Robson {
     void toJSON(String filename) {
         BufferedWriter writer = null;
         try {
-            writer = new BufferedWriter(new FileWriter(filename, true));
+            writer = new BufferedWriter(new FileWriter(filename));
             writer.append(serializator.toJson(kod));
             writer.close();
         }
         catch (IOException e) {
-            System.err.println("Błędna nazwa pliku.");
+            // To się raczej nie wydarzy. Jeśli plik nie istnieje, to zostanie utworzony.
+            System.err.println("Błędny plik.");
         }
     }
 
@@ -55,15 +56,6 @@ public class Robson {
         catch (NieprawidlowyProgram e) {
             System.err.println("Nieprawidłowy program.");
         }
-        System.out.println(serializator.toJson(robson.kod));
-        try {
-            System.out.println(robson.wykonaj());
-        }
-        catch (BladWykonania e) {
-            System.err.println("Błąd wykonania. " + e.getMessage());
-        }
-        robson.kod = serializator.fromJson(serializator.toJson(robson.kod));
-        System.out.println(serializator.toJson(robson.kod));
         try {
             System.out.println(robson.wykonaj());
         }

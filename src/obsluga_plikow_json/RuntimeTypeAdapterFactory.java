@@ -1,4 +1,4 @@
-package ObsługaPlikówJSON;// Skopiowałem w celu odróżniania typów w pliku JSON.
+package obsluga_plikow_json;// Skopiowałem w celu odróżniania typów w pliku JSON.
 // informacja o tym, że biblioteka nie jest utrzymywana i można kopiować pliki:
 // https://github.com/google/gson/issues/845
 
