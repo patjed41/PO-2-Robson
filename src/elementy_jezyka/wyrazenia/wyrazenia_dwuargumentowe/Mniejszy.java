@@ -1,5 +1,9 @@
 package elementy_jezyka.wyrazenia.wyrazenia_dwuargumentowe;
 
+import elementy_jezyka.BladWykonania;
+
+import java.util.Map;
+
 public class Mniejszy extends WyrArytDwuargumentowe {
 
     public Mniejszy() {
@@ -7,8 +11,8 @@ public class Mniejszy extends WyrArytDwuargumentowe {
     }
 
     @Override
-    public double wykonaj() {
-        if (argument1.wykonaj() < argument2.wykonaj())
+    public double wykonaj(Map<String, Double> zmienne) throws BladWykonania {
+        if (argument1.wykonaj(zmienne) < argument2.wykonaj(zmienne))
             return 1;
         else
             return 0;

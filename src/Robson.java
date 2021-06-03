@@ -1,60 +1,74 @@
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import elementy_jezyka.*;
-import elementy_jezyka.wyrazenia.*;
-import elementy_jezyka.wyrazenia.wyrazenia_dwuargumentowe.*;
+import ObsługaPlikówJSON.SerializatorJSON;
+import elementy_jezyka.BladWykonania;
+import elementy_jezyka.ElementJęzyka;
 
-import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.*;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class Robson {
-    private ElementJęzyka program;
+    // Mogłoby być "private Blok kod", gdybyśmy założyli, że program w Robsonie
+    // musi być cały w jednym najbardziej zewnętrznym bloku.
+    private ElementJęzyka kod;
+    private Map<String, Double> zmienne; // zmienne globalne występujące w programie
+    private static final SerializatorJSON serializator = new SerializatorJSON();
 
-    private static final RuntimeTypeAdapterFactory<ElementJęzyka> adapter =
-        RuntimeTypeAdapterFactory.of(ElementJęzyka.class, "typ")
-            .registerSubtype(Blok.class)
-            .registerSubtype(Plus.class)
-            .registerSubtype(Minus.class)
-            .registerSubtype(Razy.class)
-            .registerSubtype(Dzielenie.class)
-                .registerSubtype(And.class)
-                .registerSubtype(Or.class)
-                .registerSubtype(Mniejszy.class, "<")
-                .registerSubtype(Większy.class, ">")
-                .registerSubtype(MniejszyRówny.class, "<=")
-                .registerSubtype(WiększyRówny.class, ">=")
-                .registerSubtype(Równy.class, "==")
-                .registerSubtype(Not.class)
-            .registerSubtype(Liczba.class)
-                .registerSubtype(True.class)
-                .registerSubtype(False.class);
-
-    private static final Gson gson_read = new GsonBuilder().registerTypeAdapterFactory(adapter).create();
-    private static final Gson gson_write = new GsonBuilder().create();
+    public Robson() {
+        zmienne = new HashMap<>();
+    }
 
     void fromJSON(String filename) throws NieprawidlowyProgram {
         Scanner skaner;
         try {
             skaner = new Scanner(new File(filename));
+            kod = serializator.fromJson(skaner.useDelimiter("\\Z").next());
+            zmienne = new HashMap<>(); // Nie ma potrzeby trzymać w pamięci zmiennych ze starego kodu.
+            skaner.close();
         }
         catch (FileNotFoundException e) {
             System.err.println("Błędna nazwa pliku.");
-            return;
         }
+    }
 
-        program = gson_read.fromJson(skaner.useDelimiter("\\Z").next(), ElementJęzyka.class);
+    void toJSON(String filename) {
+        BufferedWriter writer = null;
+        try {
+            writer = new BufferedWriter(new FileWriter(filename, true));
+            writer.append(serializator.toJson(kod));
+            writer.close();
+        }
+        catch (IOException e) {
+            System.err.println("Błędna nazwa pliku.");
+        }
+    }
+
+    double wykonaj() throws BladWykonania {
+        return kod.wykonaj(zmienne);
     }
 
     public static void main(String[] args) {
         Robson robson = new Robson();
         try {
-            robson.fromJSON("src/przyklad.JSON");
+            robson.fromJSON("src/przyklad2.JSON");
         }
         catch (NieprawidlowyProgram e) {
             System.err.println("Nieprawidłowy program.");
         }
-        System.out.println(gson_write.toJson(robson.program));
-        System.out.println(robson.program.wykonaj());
+        System.out.println(serializator.toJson(robson.kod));
+        try {
+            System.out.println(robson.wykonaj());
+        }
+        catch (BladWykonania e) {
+            System.err.println("Błąd wykonania. " + e.getMessage());
+        }
+        robson.kod = serializator.fromJson(serializator.toJson(robson.kod));
+        System.out.println(serializator.toJson(robson.kod));
+        try {
+            System.out.println(robson.wykonaj());
+        }
+        catch (BladWykonania e) {
+            System.err.println("Błąd wykonania. " + e.getMessage());
+        }
     }
 }

@@ -1,6 +1,9 @@
 package elementy_jezyka.wyrazenia;
 
+import elementy_jezyka.BladWykonania;
 import elementy_jezyka.ElementJęzyka;
+
+import java.util.Map;
 
 public class Zmienna extends ElementJęzyka {
 
@@ -11,7 +14,9 @@ public class Zmienna extends ElementJęzyka {
     }
 
     @Override
-    public double wykonaj() {
-        return 0; // return zmienne.getValue(nazwa);
+    public double wykonaj(Map<String, Double> zmienne) throws BladWykonania {
+        if (!zmienne.containsKey(nazwa))
+            zmienne.put(nazwa, 0.);
+        return zmienne.get(nazwa);
     }
 }

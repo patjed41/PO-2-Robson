@@ -1,5 +1,9 @@
 package elementy_jezyka.wyrazenia.wyrazenia_dwuargumentowe;
 
+import elementy_jezyka.BladWykonania;
+
+import java.util.Map;
+
 public class Minus extends WyrArytDwuargumentowe {
 
     public Minus() {
@@ -7,7 +11,7 @@ public class Minus extends WyrArytDwuargumentowe {
     }
 
     @Override
-    public double wykonaj() {
-        return argument1.wykonaj() - argument2.wykonaj();
+    public double wykonaj(Map<String, Double> zmienne) throws BladWykonania {
+        return argument1.wykonaj(zmienne) - argument2.wykonaj(zmienne);
     }
 }

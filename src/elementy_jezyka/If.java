@@ -1,5 +1,7 @@
 package elementy_jezyka;
 
+import java.util.Map;
+
 public class If extends ElementJęzyka {
 
     private ElementJęzyka warunek;
@@ -11,12 +13,12 @@ public class If extends ElementJęzyka {
     }
 
     @Override
-    public double wykonaj() {
-        if (warunek.wykonaj() != 0)
-            return blok_prawda.wykonaj();
+    public double wykonaj(Map<String, Double> zmienne) throws BladWykonania {
+        if (warunek.wykonaj(zmienne) != 0)
+            return blok_prawda.wykonaj(zmienne);
         else if (blok_falsz == null)
             return 0;
         else
-            return blok_falsz.wykonaj();
+            return blok_falsz.wykonaj(zmienne);
     }
 }

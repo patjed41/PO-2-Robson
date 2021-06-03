@@ -1,5 +1,7 @@
 package elementy_jezyka;
 
+import java.util.Map;
+
 public class Przypisanie extends ElementJęzyka {
 
     private String nazwa;
@@ -10,9 +12,9 @@ public class Przypisanie extends ElementJęzyka {
     }
 
     @Override
-    public double wykonaj() {
-        double wynik = wartosc.wykonaj();
-        // zmienne.put(nazwa, wynik);
+    public double wykonaj(Map<String, Double> zmienne) throws BladWykonania {
+        double wynik = wartosc.wykonaj(zmienne);
+        zmienne.put(nazwa, wynik);
         return wynik;
     }
 }

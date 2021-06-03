@@ -1,5 +1,7 @@
 package elementy_jezyka;
 
+import java.util.Map;
+
 public class While extends ElementJęzyka {
 
     private ElementJęzyka warunek;
@@ -10,9 +12,9 @@ public class While extends ElementJęzyka {
     }
 
     @Override
-    public double wykonaj() {
-        while (warunek.wykonaj() != 0)
-            blok.wykonaj();
+    public double wykonaj(Map<String, Double> zmienne) throws BladWykonania {
+        while (warunek.wykonaj(zmienne) != 0)
+            blok.wykonaj(zmienne);
         return 0;
     }
 }

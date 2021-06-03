@@ -1,4 +1,4 @@
-// Skopiowałem w celu odróżniania typów w pliku JSON.
+package ObsługaPlikówJSON;// Skopiowałem w celu odróżniania typów w pliku JSON.
 // informacja o tym, że biblioteka nie jest utrzymywana i można kopiować pliki:
 // https://github.com/google/gson/issues/845
 
@@ -96,11 +96,11 @@ import com.google.gson.stream.JsonWriter;
  * "Rectangle"}) are configurable.
  *
  * <h3>Registering Types</h3>
- * Create a {@code RuntimeTypeAdapterFactory} by passing the base type and type field
+ * Create a {@code ObsługaPlikówJSON.RuntimeTypeAdapterFactory} by passing the base type and type field
  * name to the {@link #of} factory method. If you don't supply an explicit type
  * field name, {@code "type"} will be used. <pre>   {@code
- *   RuntimeTypeAdapterFactory<Shape> shapeAdapterFactory
- *       = RuntimeTypeAdapterFactory.of(Shape.class, "type");
+ *   ObsługaPlikówJSON.RuntimeTypeAdapterFactory<Shape> shapeAdapterFactory
+ *       = ObsługaPlikówJSON.RuntimeTypeAdapterFactory.of(Shape.class, "type");
  * }</pre>
  * Next register all of your subtypes. Every subtype must be explicitly
  * registered. This protects your application from injection attacks. If you
@@ -117,7 +117,7 @@ import com.google.gson.stream.JsonWriter;
  *       .create();
  * }</pre>
  * Like {@code GsonBuilder}, this API supports chaining: <pre>   {@code
- *   RuntimeTypeAdapterFactory<Shape> shapeAdapterFactory = RuntimeTypeAdapterFactory.of(Shape.class)
+ *   ObsługaPlikówJSON.RuntimeTypeAdapterFactory<Shape> shapeAdapterFactory = ObsługaPlikówJSON.RuntimeTypeAdapterFactory.of(Shape.class)
  *       .registerSubtype(Rectangle.class)
  *       .registerSubtype(Circle.class)
  *       .registerSubtype(Diamond.class);

@@ -1,6 +1,9 @@
 package elementy_jezyka.wyrazenia;
 
+import elementy_jezyka.BladWykonania;
 import elementy_jezyka.ElementJęzyka;
+
+import java.util.Map;
 
 public class Liczba extends ElementJęzyka {
 
@@ -11,7 +14,7 @@ public class Liczba extends ElementJęzyka {
     }
 
     @Override
-    public double wykonaj() {
+    public double wykonaj(Map<String, Double> zmienne) throws BladWykonania {
         return wartosc;
     }
 }
