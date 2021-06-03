@@ -1,6 +1,7 @@
 package elementy_jezyka;
 
 import java.util.Map;
+import java.util.Set;
 
 public class Blok extends ElementJęzyka {
 
@@ -20,5 +21,13 @@ public class Blok extends ElementJęzyka {
                 instrukcje[i].wykonaj(zmienne);
             return instrukcje[instrukcje.length - 1].wykonaj(zmienne);
         }
+    }
+
+    @Override
+    public void toJava(Set<String> zmienne_java, StringBuilder kod_java) {
+        kod_java.append("{\n");
+        for (ElementJęzyka instrukcja : instrukcje)
+            instrukcja.toJava(zmienne_java, kod_java);
+        kod_java.append("}\n");
     }
 }

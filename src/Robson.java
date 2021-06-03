@@ -3,9 +3,7 @@ import elementy_jezyka.BladWykonania;
 import elementy_jezyka.ElementJęzyka;
 
 import java.io.*;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 public class Robson {
     // Mogłoby być "private Blok kod", gdybyśmy założyli, że program w Robsonie
@@ -36,6 +34,24 @@ public class Robson {
         try {
             writer = new BufferedWriter(new FileWriter(filename));
             writer.append(serializator.toJson(kod));
+            writer.close();
+        }
+        catch (IOException e) {
+            // To się raczej nie wydarzy. Jeśli plik nie istnieje, to zostanie utworzony.
+            System.err.println("Błędny plik.");
+        }
+    }
+
+    void toJava(String filename) {
+        BufferedWriter writer = null;
+        try {
+            writer = new BufferedWriter(new FileWriter(filename));
+            Set<String> zmienne_java = new HashSet<>();
+            StringBuilder kod_java = new StringBuilder();
+
+            kod.toJava(zmienne_java, kod_java);
+
+            //writer.append(serializator.toJson(kod));
             writer.close();
         }
         catch (IOException e) {
