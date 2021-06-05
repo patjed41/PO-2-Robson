@@ -22,7 +22,9 @@ public class Liczba extends ElementJęzyka {
     @Override
     public void toJava(Set<String> zmienne_java, StringBuilder kod_java, boolean średnik, int taby) {
         dopiszTaby(kod_java, taby);
-        kod_java.append(wartosc);
-        dopiszśrednik(kod_java, średnik);
+        if (średnik)
+            kod_java.append("ustawWyn(").append(wartosc).append(");\n");
+        else
+            kod_java.append(wartosc);
     }
 }

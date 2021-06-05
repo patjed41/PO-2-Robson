@@ -21,12 +21,6 @@ public class MniejszyRówny extends WyrDwuargumentowe {
 
     @Override
     public void toJava(Set<String> zmienne_java, StringBuilder kod_java, boolean średnik, int taby) {
-        dopiszTaby(kod_java, taby);
-        kod_java.append("(");
-        argument1.toJava(zmienne_java, kod_java, false, 0);
-        kod_java.append(" <= ");
-        argument2.toJava(zmienne_java, kod_java, false, 0);
-        kod_java.append(")");
-        dopiszśrednik(kod_java, średnik);
+        WyrDwuargumentoweToJava(zmienne_java, kod_java, średnik, taby, "<=");
     }
 }

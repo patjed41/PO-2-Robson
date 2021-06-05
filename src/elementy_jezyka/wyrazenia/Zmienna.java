@@ -25,7 +25,9 @@ public class Zmienna extends ElementJęzyka {
     public void toJava(Set<String> zmienne_java, StringBuilder kod_java, boolean średnik, int taby) {
         zmienne_java.add(nazwa);
         dopiszTaby(kod_java, taby);
-        kod_java.append(nazwa);
-        dopiszśrednik(kod_java, średnik);
+        if (średnik)
+            kod_java.append("ustawWyn(").append(nazwa).append(");\n");
+        else
+            kod_java.append(nazwa);
     }
 }

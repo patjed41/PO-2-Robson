@@ -23,8 +23,11 @@ public class Przypisanie extends ElementJęzyka {
     public void toJava(Set<String> zmienne_java, StringBuilder kod_java, boolean średnik, int taby) {
         zmienne_java.add(nazwa);
         dopiszTaby(kod_java, taby);
+        if (średnik)
+            kod_java.append("ustawWyn(");
         kod_java.append(nazwa).append(" = ");
         wartosc.toJava(zmienne_java, kod_java, false, 0);
-        dopiszśrednik(kod_java, średnik);
+        if (średnik)
+            kod_java.append(");\n");
     }
 }

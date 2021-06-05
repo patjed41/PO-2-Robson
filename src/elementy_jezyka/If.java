@@ -30,10 +30,14 @@ public class If extends ElementJęzyka {
         warunek.toJava(zmienne_java, kod_java, false, 0);
         kod_java.append(")\n");
         blok_prawda.toJava(zmienne_java, kod_java, true, taby);
+        dopiszTaby(kod_java, taby);
+        kod_java.append("else\n");
         if (blok_falsz != null) {
-            dopiszTaby(kod_java, taby);
-            kod_java.append("else\n");
             blok_falsz.toJava(zmienne_java, kod_java, true, taby);
+        }
+        else {
+            dopiszTaby(kod_java, taby + 1);
+            kod_java.append("ustawWyn(0);\n");
         }
     }
 }

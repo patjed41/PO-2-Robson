@@ -26,5 +26,7 @@ public class While extends ElementJęzyka {
         warunek.toJava(zmienne_java, kod_java, false, 0);
         kod_java.append(")\n");
         blok.toJava(zmienne_java, kod_java, true, taby);
+        dopiszTaby(kod_java, taby);
+        kod_java.append("ustawWyn(0);\n");
     }
 }

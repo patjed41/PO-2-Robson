@@ -19,8 +19,10 @@ public class False extends ElementJęzyka {
 
     @Override
     public void toJava(Set<String> zmienne_java, StringBuilder kod_java, boolean średnik, int taby) {
-        kod_java.append("false");
         dopiszTaby(kod_java, taby);
-        dopiszśrednik(kod_java, średnik);
+        if (średnik)
+            kod_java.append("ustawWyn(false);\n");
+        else
+            kod_java.append("false");
     }
 }

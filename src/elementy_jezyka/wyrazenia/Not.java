@@ -25,6 +25,14 @@ public class Not extends ElementJęzyka {
     @Override
     public void toJava(Set<String> zmienne_java, StringBuilder kod_java, boolean średnik, int taby) {
         dopiszTaby(kod_java, taby);
-        kod_java.append("!");
+        if (średnik) {
+            kod_java.append("ustawWyn(!");
+            argument.toJava(zmienne_java, kod_java, false, 0);
+            kod_java.append(");\n");
+        }
+        else {
+            kod_java.append("!");
+            argument.toJava(zmienne_java, kod_java, false, 0);
+        }
     }
 }

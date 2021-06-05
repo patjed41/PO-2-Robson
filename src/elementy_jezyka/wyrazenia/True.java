@@ -20,7 +20,9 @@ public class True extends ElementJęzyka {
     @Override
     public void toJava(Set<String> zmienne_java, StringBuilder kod_java, boolean średnik, int taby) {
         dopiszTaby(kod_java, taby);
-        kod_java.append("true");
-        dopiszśrednik(kod_java, średnik);
+        if (średnik)
+            kod_java.append("ustawWyn(true);\n");
+        else
+            kod_java.append("true");
     }
 }

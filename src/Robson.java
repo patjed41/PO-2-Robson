@@ -60,13 +60,20 @@ public class Robson {
             writer.append("public class ");
             writer.append(filename.substring(początek_nazwy_pliku, filename.length() - 5));
             writer.append("\n{\n");
-            writer.append("    public static void main(String[] args)");
-            writer.append("\n    {\n");
+            writer.append("    static double wyn = 0;\n\n");
+            writer.append("    private static void ustawWyn(double wyr_arytmetyczne) {\n");
+            writer.append("        wyn = wyr_arytmetyczne;\n    }\n\n");
+            writer.append("    private static void ustawWyn(boolean wyr_logiczne) {\n");
+            writer.append("        if (wyr_logiczne)\n            wyn = 1;\n        else\n            wyn = 0;\n    }\n\n");
+            writer.append("    public static void main(String[] args) {\n");
             writer.append("        // deklaracje zmiennych, które w Robsonie są globalne\n");
+
             for (String nazwa : zmienne_java)
                 writer.append("        double ").append(nazwa).append(" = 0;\n");
+
             writer.append("\n");
             writer.append(kod_java.toString());
+            writer.append("        System.out.println(wyn);\n");
             writer.append("    }\n}");
             writer.close();
         }
