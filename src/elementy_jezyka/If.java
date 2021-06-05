@@ -24,14 +24,16 @@ public class If extends ElementJęzyka {
     }
 
     @Override
-    public void toJava(Set<String> zmienne_java, StringBuilder kod_java) {
-        kod_java.append("if ");
-        warunek.toJava(zmienne_java, kod_java);
-        kod_java.append("\n");
-        blok_prawda.toJava(zmienne_java, kod_java);
+    public void toJava(Set<String> zmienne_java, StringBuilder kod_java, boolean średnik, int taby) {
+        dopiszTaby(kod_java, taby);
+        kod_java.append("if (");
+        warunek.toJava(zmienne_java, kod_java, false, 0);
+        kod_java.append(")\n");
+        blok_prawda.toJava(zmienne_java, kod_java, true, taby);
         if (blok_falsz != null) {
-            kod_java.append("else ");
-            blok_falsz.toJava(zmienne_java, kod_java);
+            dopiszTaby(kod_java, taby);
+            kod_java.append("else\n");
+            blok_falsz.toJava(zmienne_java, kod_java, true, taby);
         }
     }
 }

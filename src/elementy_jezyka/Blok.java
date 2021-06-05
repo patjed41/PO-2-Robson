@@ -24,10 +24,12 @@ public class Blok extends ElementJęzyka {
     }
 
     @Override
-    public void toJava(Set<String> zmienne_java, StringBuilder kod_java) {
+    public void toJava(Set<String> zmienne_java, StringBuilder kod_java, boolean średnik, int taby) {
+        dopiszTaby(kod_java, taby);
         kod_java.append("{\n");
         for (ElementJęzyka instrukcja : instrukcje)
-            instrukcja.toJava(zmienne_java, kod_java);
+            instrukcja.toJava(zmienne_java, kod_java, true, taby + 1);
+        dopiszTaby(kod_java, taby);
         kod_java.append("}\n");
     }
 }

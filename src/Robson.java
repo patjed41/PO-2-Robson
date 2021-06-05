@@ -43,15 +43,31 @@ public class Robson {
     }
 
     void toJava(String filename) {
+        if (!filename.endsWith(".java")) {
+            System.err.println("Plik musi mieć rozszerzenie \".java\".");
+        }
+
         BufferedWriter writer = null;
         try {
             writer = new BufferedWriter(new FileWriter(filename));
             Set<String> zmienne_java = new HashSet<>();
             StringBuilder kod_java = new StringBuilder();
 
-            kod.toJava(zmienne_java, kod_java);
+            kod.toJava(zmienne_java, kod_java, true, 2);
 
-            //writer.append(serializator.toJson(kod));
+            int początek_nazwy_pliku = filename.lastIndexOf('/') + 1; // jeśli '\' nie występuje, to 0
+
+            writer.append("public class ");
+            writer.append(filename.substring(początek_nazwy_pliku, filename.length() - 5));
+            writer.append("\n{\n");
+            writer.append("    public static void main(String[] args)");
+            writer.append("\n    {\n");
+            writer.append("        // deklaracje zmiennych, które w Robsonie są globalne\n");
+            for (String nazwa : zmienne_java)
+                writer.append("        double ").append(nazwa).append(" = 0;\n");
+            writer.append("\n");
+            writer.append(kod_java.toString());
+            writer.append("    }\n}");
             writer.close();
         }
         catch (IOException e) {
@@ -78,5 +94,6 @@ public class Robson {
         catch (BladWykonania e) {
             System.err.println("Błąd wykonania. " + e.getMessage());
         }
+        robson.toJava("src/przyklad.java");
     }
 }

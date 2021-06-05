@@ -20,7 +20,11 @@ public class Przypisanie extends ElementJęzyka {
     }
 
     @Override
-    public void toJava(Set<String> zmienne_java, StringBuilder kod_java) {
-        kod_java.append(nazwa).append(" = ").append(wartosc).append(";\n");
+    public void toJava(Set<String> zmienne_java, StringBuilder kod_java, boolean średnik, int taby) {
+        zmienne_java.add(nazwa);
+        dopiszTaby(kod_java, taby);
+        kod_java.append(nazwa).append(" = ");
+        wartosc.toJava(zmienne_java, kod_java, false, 0);
+        dopiszśrednik(kod_java, średnik);
     }
 }
