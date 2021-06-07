@@ -1,28 +1,28 @@
-package elementy_jezyka.wyrazenia;
+package elementy_jezyka.wyrazenia_logiczne;
 
 import elementy_jezyka.BladWykonania;
-import elementy_jezyka.ElementJęzyka;
+import elementy_jezyka.ElementJezyka;
 
 import java.util.Map;
 import java.util.Set;
 
-public class True extends ElementJęzyka {
+public class False extends WyrLog {
 
-    public True() {
+    public False() {
         typ = "True";
     }
 
     @Override
     public double wykonaj(Map<String, Double> zmienne) throws BladWykonania {
-        return 1;
+        return 0;
     }
 
     @Override
     public void toJava(Set<String> zmienne_java, StringBuilder kod_java, boolean średnik, int taby) {
         dopiszTaby(kod_java, taby);
         if (średnik)
-            kod_java.append("ustawWyn(true);\n");
+            kod_java.append("ustawWyn(false);\n");
         else
-            kod_java.append("true");
+            kod_java.append("false");
     }
 }

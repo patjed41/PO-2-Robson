@@ -1,11 +1,14 @@
-package elementy_jezyka;
+package elementy_jezyka.inne;
+
+import elementy_jezyka.BladWykonania;
+import elementy_jezyka.ElementJezyka;
 
 import java.util.Map;
 import java.util.Set;
 
-public class Blok extends ElementJęzyka {
+public class Blok extends ElementJezyka {
 
-    private ElementJęzyka[] instrukcje;
+    private ElementJezyka[] instrukcje;
 
     public Blok() {
         typ = "Blok";
@@ -32,7 +35,7 @@ public class Blok extends ElementJęzyka {
             kod_java.append("ustawWyn(0);\n");
         }
         else {
-            for (ElementJęzyka instrukcja : instrukcje)
+            for (ElementJezyka instrukcja : instrukcje)
                 instrukcja.toJava(zmienne_java, kod_java, true, taby + 1);
         }
         dopiszTaby(kod_java, taby);

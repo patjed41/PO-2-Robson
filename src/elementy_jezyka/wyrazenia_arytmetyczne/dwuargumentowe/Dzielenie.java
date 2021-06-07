@@ -1,11 +1,11 @@
-package elementy_jezyka.wyrazenia.wyrazenia_dwuargumentowe;
+package elementy_jezyka.wyrazenia_arytmetyczne.dwuargumentowe;
 
 import elementy_jezyka.BladWykonania;
 
 import java.util.Map;
 import java.util.Set;
 
-public class Dzielenie extends WyrDwuargumentowe {
+public class Dzielenie extends WyrArytDwuargumentowe {
 
     public Dzielenie() {
         typ = "Plus";

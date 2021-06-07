@@ -1,12 +1,12 @@
-package elementy_jezyka.wyrazenia;
+package elementy_jezyka.wyrazenia_arytmetyczne;
 
 import elementy_jezyka.BladWykonania;
-import elementy_jezyka.ElementJęzyka;
+import elementy_jezyka.ElementJezyka;
 
 import java.util.Map;
 import java.util.Set;
 
-public class Liczba extends ElementJęzyka {
+public class Liczba extends WyrAryt {
 
     private double wartosc;
 

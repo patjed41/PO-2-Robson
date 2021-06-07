@@ -1,12 +1,15 @@
-package elementy_jezyka;
+package elementy_jezyka.wyrazenia_arytmetyczne;
+
+import elementy_jezyka.BladWykonania;
+import elementy_jezyka.ElementJezyka;
 
 import java.util.Map;
 import java.util.Set;
 
-public class Przypisanie extends ElementJęzyka {
+public class Przypisanie extends WyrAryt {
 
     private String nazwa;
-    private ElementJęzyka wartosc;
+    private ElementJezyka wartosc;
 
     public Przypisanie() {
         typ = "Przypisanie";

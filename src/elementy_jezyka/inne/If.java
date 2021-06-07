@@ -1,13 +1,17 @@
-package elementy_jezyka;
+package elementy_jezyka.inne;
+
+import elementy_jezyka.BladWykonania;
+import elementy_jezyka.ElementJezyka;
+import elementy_jezyka.wyrazenia_logiczne.WyrLog;
 
 import java.util.Map;
 import java.util.Set;
 
-public class If extends ElementJęzyka {
+public class If extends ElementJezyka {
 
-    private ElementJęzyka warunek;
-    private ElementJęzyka blok_prawda;
-    private ElementJęzyka blok_falsz;
+    private WyrLog warunek;
+    private Blok blok_prawda;
+    private Blok blok_falsz;
 
     public If() {
         typ = "If";

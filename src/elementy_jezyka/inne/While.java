@@ -1,12 +1,16 @@
-package elementy_jezyka;
+package elementy_jezyka.inne;
+
+import elementy_jezyka.BladWykonania;
+import elementy_jezyka.ElementJezyka;
+import elementy_jezyka.wyrazenia_logiczne.WyrLog;
 
 import java.util.Map;
 import java.util.Set;
 
-public class While extends ElementJęzyka {
+public class While extends ElementJezyka {
 
-    private ElementJęzyka warunek;
-    private ElementJęzyka blok;
+    private WyrLog warunek;
+    private Blok blok;
 
     public While() {
         typ = "While";

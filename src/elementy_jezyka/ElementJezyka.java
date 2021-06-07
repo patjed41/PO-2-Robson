@@ -3,7 +3,7 @@ package elementy_jezyka;
 import java.util.Map;
 import java.util.Set;
 
-public abstract class ElementJęzyka {
+public abstract class ElementJezyka {
     protected String typ = "ElementJęzyka";
 
     public abstract double wykonaj(Map<String, Double> zmienne) throws BladWykonania;

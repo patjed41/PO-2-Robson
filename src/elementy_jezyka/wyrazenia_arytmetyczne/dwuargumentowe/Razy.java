@@ -1,11 +1,11 @@
-package elementy_jezyka.wyrazenia.wyrazenia_dwuargumentowe;
+package elementy_jezyka.wyrazenia_arytmetyczne.dwuargumentowe;
 
 import elementy_jezyka.BladWykonania;
 
 import java.util.Map;
 import java.util.Set;
 
-public class Razy extends WyrDwuargumentowe {
+public class Razy extends WyrArytDwuargumentowe {
 
     public Razy() {
         typ = "Razy";

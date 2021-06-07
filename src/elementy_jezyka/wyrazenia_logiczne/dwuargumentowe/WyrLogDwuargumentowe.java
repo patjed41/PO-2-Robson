@@ -1,14 +1,14 @@
-package elementy_jezyka.wyrazenia.wyrazenia_dwuargumentowe;
+package elementy_jezyka.wyrazenia_logiczne.dwuargumentowe;
 
-import elementy_jezyka.ElementJęzyka;
+import elementy_jezyka.wyrazenia_logiczne.WyrLog;
 
 import java.util.Set;
 
-// klasa reprezentująca wyrażenie dwuargumentowe (arytmetyczne i logiczne)
-public abstract class WyrDwuargumentowe extends ElementJęzyka {
+// klasa reprezentująca wyrażenie logiczne dwuargumentowe o argumentach logicznych.
+public abstract class WyrLogDwuargumentowe extends WyrLog {
 
-    protected ElementJęzyka argument1;
-    protected ElementJęzyka argument2;
+    protected WyrLog argument1;
+    protected WyrLog argument2;
 
     // Funkcja pozwalająca uniknąć pisania identycznego kodu w każdej klasie pochodnej.
     protected void WyrDwuargumentoweToJava(Set<String> zmienne_java,
@@ -22,6 +22,6 @@ public abstract class WyrDwuargumentowe extends ElementJęzyka {
         argument2.toJava(zmienne_java, kod_java, false, 0);
         kod_java.append(")");
         if (średnik)
-            kod_java.append(");");
+            kod_java.append(");\n");
     }
 }
