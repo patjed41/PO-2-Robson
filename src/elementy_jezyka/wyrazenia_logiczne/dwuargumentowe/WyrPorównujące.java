@@ -12,8 +12,8 @@ public abstract class WyrPorównujące extends WyrLog {
     protected WyrAryt argument2;
 
     // Funkcja pozwalająca uniknąć pisania identycznego kodu w każdej klasie pochodnej.
-    protected void WyrDwuargumentoweToJava(Set<String> zmienne_java,
-                                           StringBuilder kod_java, boolean średnik, int taby, String wyr) {
+    protected void WyrPorównująceToJava(Set<String> zmienne_java,
+                                        StringBuilder kod_java, boolean średnik, int taby, String wyr) {
         dopiszTaby(kod_java, taby);
         if (średnik)
             kod_java.append("ustawWyn(");

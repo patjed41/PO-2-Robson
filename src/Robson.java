@@ -101,5 +101,40 @@ public class Robson {
 
         // TestNWD test_nwd = new TestNWD();
         // test_nwd.testuj();
+
+
+        // Poniżej znajdują się szablony do uruchamiania wszystkich metod.
+
+        // Aby uruchomić program na pierwszym przykładzie z treści, wystarczy odkomentować
+        // poniższe wiersze. Aby urochmić go na drugim przykładzie (Fibonacci) trzeba
+        // zmienić "pliki_robson/przyklad1.JSON" na "pliki_robson/przyklad2.JSON".
+
+        /* Robson robson = new Robson();
+        try {
+            robson.fromJSON("pliki_robson/przyklad1.JSON");
+        }
+        catch (NieprawidlowyProgram e) {
+            System.err.println("Nieprawidłowy program.");
+        }
+        try {
+            System.out.println(robson.wykonaj());
+        }
+        catch (BladWykonania bladWykonania) {
+            System.err.println("Błąd wykonania.");
+        } */
+
+
+        // Poniższy wiersz uruchamia toJava na pierwszym przykładzie. Można zmienić
+        // na drugi przykład, ale trzeba pamiętąć, żeby wczytać drugi przykład
+        // wcześniej metodą fromJSON. Przynajmniej 5 pierwszych wierszy z powyższych musi
+        // być odkomentowanych, żeby istniał obiekt robson z wczytanym kodem z fromJSON.
+        // W pliku README napisałam jak uruchamiać pliki powstałe po wywołaniu toJava.
+
+        // robson.toJava("pliki_toJava/przyklad1.java");
+
+
+        // Poniższy wiersz uruchamia toJSON na pierwszym przykładzie.
+
+        // robson.toJSON("pliki_toJSON/przyklad1.JSON");
     }
 }

@@ -11,7 +11,7 @@ import java.util.Scanner;
 // w pliku nwd.JSON w wierszach 9. i 17 (po dwukropku nie może być spacji).
 public class TestNWD {
 
-    private static String nazwa_pliku = "src/nwd.JSON";
+    private static String nazwa_pliku = "pliki_robson/nwd.JSON";
 
     private double nwd(double a, double b) {
         while (a != b) {

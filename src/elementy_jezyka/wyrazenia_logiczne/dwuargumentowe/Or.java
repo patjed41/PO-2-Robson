@@ -21,6 +21,6 @@ public class Or extends WyrLogDwuargumentowe {
 
     @Override
     public void toJava(Set<String> zmienne_java, StringBuilder kod_java, boolean średnik, int taby) {
-        WyrDwuargumentoweToJava(zmienne_java, kod_java, średnik, taby, "||");
+        WyrLogDwuargumentoweToJava(zmienne_java, kod_java, średnik, taby, "||");
     }
 }

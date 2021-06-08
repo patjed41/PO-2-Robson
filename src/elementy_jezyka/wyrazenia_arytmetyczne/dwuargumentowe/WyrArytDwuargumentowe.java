@@ -13,6 +13,10 @@ public abstract class WyrArytDwuargumentowe extends WyrAryt {
     // Funkcja pozwalająca uniknąć pisania identycznego kodu w każdej klasie pochodnej.
     // Każde wyrażenie dwuargumentowe przepisuje się do javy w taki sam sposób, jedyną
     // różnicą jest symbol wyr oddzielający argumenty.
+    // Klasy WyrLogDwuargumentowe i WyrPorównujące mają identyczną funkcję. Moglibyśmy
+    // próbować swtorzyć klasę WyrDwuargumentowe, po której dziedziczyłyby te 3 klasy,
+    // tak aby nie powtarzać tego samego kodu 3 razy, jednak przez brak
+    // wielodziedziczenia w javie jest to niemożliwe (wszystkie klasy już dziedziczą).
     protected void WyrArytDwuargumentoweToJava(Set<String> zmienne_java,
                                                StringBuilder kod_java, boolean średnik, int taby, String wyr) {
         dopiszTaby(kod_java, taby);

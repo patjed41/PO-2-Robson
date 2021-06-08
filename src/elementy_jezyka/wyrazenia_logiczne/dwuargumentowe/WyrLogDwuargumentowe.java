@@ -11,8 +11,8 @@ public abstract class WyrLogDwuargumentowe extends WyrLog {
     protected WyrLog argument2;
 
     // Funkcja pozwalająca uniknąć pisania identycznego kodu w każdej klasie pochodnej.
-    protected void WyrDwuargumentoweToJava(Set<String> zmienne_java,
-                                           StringBuilder kod_java, boolean średnik, int taby, String wyr) {
+    protected void WyrLogDwuargumentoweToJava(Set<String> zmienne_java,
+                                              StringBuilder kod_java, boolean średnik, int taby, String wyr) {
         dopiszTaby(kod_java, taby);
         if (średnik)
             kod_java.append("ustawWyn(");

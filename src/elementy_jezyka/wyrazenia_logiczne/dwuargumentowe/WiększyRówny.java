@@ -21,6 +21,6 @@ public class WiększyRówny extends WyrPorównujące {
 
     @Override
     public void toJava(Set<String> zmienne_java, StringBuilder kod_java, boolean średnik, int taby) {
-        WyrDwuargumentoweToJava(zmienne_java, kod_java, średnik, taby, ">=");
+        WyrPorównująceToJava(zmienne_java, kod_java, średnik, taby, ">=");
     }
 }
