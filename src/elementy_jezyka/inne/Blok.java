@@ -16,7 +16,7 @@ public class Blok extends ElementJezyka {
 
     @Override
     public double wykonaj(Map<String, Double> zmienne) throws BladWykonania {
-        if (instrukcje.length == 0) {
+        if (instrukcje.length == 0) { // blok jest pusty, więc wynik to 0
             return 0;
         }
         else {
@@ -30,7 +30,7 @@ public class Blok extends ElementJezyka {
     public void toJava(Set<String> zmienne_java, StringBuilder kod_java, boolean średnik, int taby) {
         dopiszTaby(kod_java, taby);
         kod_java.append("{\n");
-        if (instrukcje.length == 0) {
+        if (instrukcje.length == 0) { // blok jest pusty, więc wynik to 0
             dopiszTaby(kod_java, taby);
             kod_java.append("ustawWyn(0);\n");
         }

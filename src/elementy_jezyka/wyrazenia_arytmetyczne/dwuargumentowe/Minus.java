@@ -18,6 +18,6 @@ public class Minus extends WyrArytDwuargumentowe {
 
     @Override
     public void toJava(Set<String> zmienne_java, StringBuilder kod_java, boolean średnik, int taby) {
-        WyrDwuargumentoweToJava(zmienne_java, kod_java, średnik, taby, "-");
+        WyrArytDwuargumentoweToJava(zmienne_java, kod_java, średnik, taby, "-");
     }
 }

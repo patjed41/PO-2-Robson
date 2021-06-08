@@ -1,7 +1,6 @@
 package elementy_jezyka.wyrazenia_logiczne.dwuargumentowe;
 
 import elementy_jezyka.BladWykonania;
-import elementy_jezyka.wyrazenia_arytmetyczne.dwuargumentowe.WyrArytDwuargumentowe;
 
 import java.util.Map;
 import java.util.Set;

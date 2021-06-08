@@ -1,6 +1,5 @@
 package elementy_jezyka.wyrazenia_arytmetyczne.dwuargumentowe;
 
-import elementy_jezyka.ElementJezyka;
 import elementy_jezyka.wyrazenia_arytmetyczne.WyrAryt;
 
 import java.util.Set;
@@ -12,8 +11,10 @@ public abstract class WyrArytDwuargumentowe extends WyrAryt {
     protected WyrAryt argument2;
 
     // Funkcja pozwalająca uniknąć pisania identycznego kodu w każdej klasie pochodnej.
-    protected void WyrDwuargumentoweToJava(Set<String> zmienne_java,
-                                           StringBuilder kod_java, boolean średnik, int taby, String wyr) {
+    // Każde wyrażenie dwuargumentowe przepisuje się do javy w taki sam sposób, jedyną
+    // różnicą jest symbol wyr oddzielający argumenty.
+    protected void WyrArytDwuargumentoweToJava(Set<String> zmienne_java,
+                                               StringBuilder kod_java, boolean średnik, int taby, String wyr) {
         dopiszTaby(kod_java, taby);
         if (średnik)
             kod_java.append("ustawWyn(");

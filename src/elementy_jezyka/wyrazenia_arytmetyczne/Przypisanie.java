@@ -1,7 +1,6 @@
 package elementy_jezyka.wyrazenia_arytmetyczne;
 
 import elementy_jezyka.BladWykonania;
-import elementy_jezyka.ElementJezyka;
 
 import java.util.Map;
 import java.util.Set;
@@ -9,7 +8,7 @@ import java.util.Set;
 public class Przypisanie extends WyrAryt {
 
     private String nazwa;
-    private ElementJezyka wartosc;
+    private WyrAryt wartosc;
 
     public Przypisanie() {
         typ = "Przypisanie";

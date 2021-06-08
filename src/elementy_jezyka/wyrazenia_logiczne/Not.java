@@ -1,14 +1,13 @@
 package elementy_jezyka.wyrazenia_logiczne;
 
 import elementy_jezyka.BladWykonania;
-import elementy_jezyka.ElementJezyka;
 
 import java.util.Map;
 import java.util.Set;
 
 public class Not extends WyrLog {
 
-    private ElementJezyka argument;
+    private WyrLog argument;
 
     public Not() {
         typ = "Not";

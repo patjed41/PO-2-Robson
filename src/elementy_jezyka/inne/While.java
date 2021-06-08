@@ -31,6 +31,6 @@ public class While extends ElementJezyka {
         kod_java.append(")\n");
         blok.toJava(zmienne_java, kod_java, true, taby);
         dopiszTaby(kod_java, taby);
-        kod_java.append("ustawWyn(0);\n");
+        kod_java.append("ustawWyn(0);\n"); // Po wykonaniu While'a wynik musi być ustawiony na 0.
     }
 }

@@ -21,7 +21,7 @@ public class If extends ElementJezyka {
     public double wykonaj(Map<String, Double> zmienne) throws BladWykonania {
         if (warunek.wykonaj(zmienne) != 0)
             return blok_prawda.wykonaj(zmienne);
-        else if (blok_falsz == null)
+        else if (blok_falsz == null) // warunek fałszywy i blok_falsz nie istnieje, więc wynik to 0
             return 0;
         else
             return blok_falsz.wykonaj(zmienne);
@@ -39,7 +39,7 @@ public class If extends ElementJezyka {
         if (blok_falsz != null) {
             blok_falsz.toJava(zmienne_java, kod_java, true, taby);
         }
-        else {
+        else { // Jeśli blok_falsz jest pusty, to ustawiamy wynik na 0, na wypadek, gdyby warunek był fałszywy.
             dopiszTaby(kod_java, taby + 1);
             kod_java.append("ustawWyn(0);\n");
         }

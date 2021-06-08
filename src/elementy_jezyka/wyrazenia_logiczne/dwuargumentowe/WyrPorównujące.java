@@ -5,7 +5,7 @@ import elementy_jezyka.wyrazenia_logiczne.WyrLog;
 
 import java.util.Set;
 
-// klasa reprezentująca wyrażenie logiczne dwuargumentowe o argumentach logicznych.
+// Klasa reprezentująca wyrażenie logiczne porównujące wyrażenia arytmetyczne.
 public abstract class WyrPorównujące extends WyrLog {
 
     protected WyrAryt argument1;

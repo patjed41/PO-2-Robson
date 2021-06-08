@@ -4,7 +4,7 @@ import elementy_jezyka.wyrazenia_logiczne.WyrLog;
 
 import java.util.Set;
 
-// klasa reprezentująca wyrażenie logiczne dwuargumentowe o argumentach logicznych.
+// Klasa reprezentująca wyrażenie logiczne dwuargumentowe o argumentach logicznych.
 public abstract class WyrLogDwuargumentowe extends WyrLog {
 
     protected WyrLog argument1;

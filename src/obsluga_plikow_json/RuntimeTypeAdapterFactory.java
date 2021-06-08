@@ -1,6 +1,9 @@
-package obsluga_plikow_json;// Skopiowałem w celu odróżniania typów w pliku JSON.
-// informacja o tym, że biblioteka nie jest utrzymywana i można kopiować pliki:
-// https://github.com/google/gson/issues/845
+package obsluga_plikow_json;
+// Skopiowałem w celu poradzenia sobie z hierarchią klas (to za co odpowiada "typ" w Robsonie).
+// Takie możliwości ma biblioteka gson-extras, jednak nie jest utrzymywana i działa niepoprawnie.
+// Dlatego zalecanym rozwiązaniem jest skopiowanie do swojego projektu klasy RuntimeTypeAdapterFactory.
+// Informacja o tym: https://github.com/google/gson/issues/845
+
 
 /*
  * Copyright (C) 2011 Google Inc.

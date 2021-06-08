@@ -1,7 +1,6 @@
 package elementy_jezyka.wyrazenia_arytmetyczne;
 
 import elementy_jezyka.BladWykonania;
-import elementy_jezyka.ElementJezyka;
 
 import java.util.Map;
 import java.util.Set;
