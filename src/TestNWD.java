@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 // Klasa udostępniająca metodę testującą, czy algorytm Euklidesa napisany w Robsonie
-// działa w poprawnie. Program nwd.JSON napisany w Robsonie i poniższa funkcja
+// działa poprawnie. Program nwd.JSON napisany w Robsonie i poniższa funkcja
 // nwd(a, b) zawierają dokładnie ten sam algorytm Euklidesa w wersji z odejmowaniem.
 // Aby przeprowadzić test na wybranych liczbach, należy zmienić wartości liczbowe
 // w pliku nwd.JSON w wierszach 9. i 17 (po dwukropku nie może być spacji).
@@ -23,7 +23,7 @@ public class TestNWD {
         return a;
     }
 
-    // Funkcją służąca do wyłuskiwania wartości, dla których liczymy nwd, z pliku nwd.JSON.
+    // Funkcja służąca do wyłuskiwania wartości, dla których liczymy nwd, z pliku nwd.JSON.
     // Aby poprawnie działała, plik nwd.JSON nie może się zmienić (poza liczbami z wierszy 9. i 17.).
     private double liczba_z_pliku(int numer_wiersza, int początek_liczby) {
         Scanner skaner;

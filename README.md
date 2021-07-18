@@ -1,7 +1,4 @@
-# Robson
-
-Proszę o dokładne przeczytanie tego pliku. Jest w nim dużo istotnych
-informacji odnośnie rozwiązania.
+Plik z istotnymi informacjami dotyczącymi rozwiązania.
 
 Kompilacja:
 
@@ -13,7 +10,8 @@ java -cp lib/gson-2.8.7.jar:. Robson
 Rozwiązanie może nie kompilować się na innych systemach niż linuks i nie
 jest to tylko kwestia zmiany linijek kompilacji. Nie gwarantuję, że nie
 korzystam w rozwiązaniu z czegoś, co jest charakterystyczne wyłącznie
-dla linuksa.
+dla linuksa. Jak widać, korzystam z biblioteki gson, jednak jest już ona
+umieszczona w folderze lib i nic więcej nie trzeba robić, aby działała.
 
 
 Uruchamianie i testowanie:
@@ -26,7 +24,8 @@ i można uruchamiać/testować program na innych plikach, nie wgłębiając się
 w strukture rozwiązania, dzięki czemu unikniemy potencjalnych problemów
 związanych z hierarchią plików. Proponuję również korzystać
 z następujących folderów:
- - pliki_robson, do trzymania plików używanych przez fromJSON
+ - pliki_robson, do trzymania plików używanych przez fromJSON (są już tam
+   3 pliki)
  - pliki_toJava, do trzymania plików utworzonych przez toJava
  - pliki_toJSON, do trzymania plików utworzonych przez toJSON
 Z tych folderów korzystają przykładowe wywołania metod w main, więc
@@ -48,21 +47,26 @@ przykładowo wywołując toJava(pliki_toJava/przykladowy_program.java).
 
 Założenia języka Robson:
 
-Treść zadania nie daje precyzyjnych informacji, co może się pojawić w języku
-Robson. Dlatego przyjąłem kilka założeń, które uważam za rozsądne:
-
-1. Rozróżniamy wyrażenia arytmetyczne i logiczne. Oznacza to na przykład,
-że wartością przypisania musi być wyrażenie arytmetyczne, argumentami
-istrukcji porównawczej "<" muszą być wyrażenia arytmetyczne oraz
-argumentami instrukcji "And" muszą być wyrażenia logiczne. Ogólnie,
-założenia są analogiczne do tych w javie.
-2. Atrybuty blok_prawda, blok_falsz w instrukcji If oraz atrybut blok
-w instrukcji While muszą być typu Blok.
-3. Elementy języka Robson If, While, Blok traktujemy jako "inne". Oznacza
-to, że nie mogą się pojawić tam, gdzie wymagamy wyrażenia arytmetycznego
-lub logicznego.
-
-Wszystkie powyższe założenia dobrze widać w strukturze klas.
+W treści wyrażenia są podzielone na arytmetyczne i logiczne, jednak nie
+ma precyzyjnej informacji, co dokładnie może wystąpić w atrybutach
+różnych elementów języka. Przyjąłem sztywne rozróżnianie wyrażeń
+logicznych i arytmetycznych. Oznacza to na przykład, że wartością
+przypisania musi być wyrażenie arytmetyczne, argumentami instrukcji
+porównawczej "<" muszą być wyrażenia arytmetyczne oraz argumentami
+instrukcji "And" muszą być wyrażenia logiczne. Ogólnie, założenia są
+podobne do tych w javie. Elementy języka Robson If, While, Blok
+traktujemy jako "inne". Oznacza to, że nie mogą się pojawić tam, gdzie
+wymagamy wyrażenia arytmetycznego lub logicznego. Powyższe założenia
+dobrze widać w strukturze klas. Mogłem przyjąć, że wszystko może być
+atrybutem wszystkiego i w przypadku wykonywania języka Robson nie
+stanowiłoby to problemu, bo i tak każdy element języka zwraca liczbę.
+Aby Robson działał na każdym możliwym programie, wystarczyłoby zmienić
+typy wszystkich argumentów we wszystkich klasach na ElementJezyka.
+Zdecydowałem się jednak korzystać z typów takich jak WyrAryt, żeby
+wyraźniej pokazać, z jakich założeń korzystam na potrzeby toJava,
+bo napisanie toJava przy "zezwalaniu na wszystko" jest bardzo trudne,
+a może nawet niemożliwe, jeśli chcemy, żeby kod zwracany przez toJava
+był przyzwoity.
 
 
 Kod plików utworzonych przez toJava:

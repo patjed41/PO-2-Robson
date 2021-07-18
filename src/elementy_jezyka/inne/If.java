@@ -10,8 +10,8 @@ import java.util.Set;
 public class If extends ElementJezyka {
 
     private WyrLog warunek;
-    private Blok blok_prawda;
-    private Blok blok_falsz;
+    private ElementJezyka blok_prawda;
+    private ElementJezyka blok_falsz;
 
     public If() {
         typ = "If";

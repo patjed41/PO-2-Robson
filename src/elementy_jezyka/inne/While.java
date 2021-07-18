@@ -10,7 +10,7 @@ import java.util.Set;
 public class While extends ElementJezyka {
 
     private WyrLog warunek;
-    private Blok blok;
+    private ElementJezyka blok;
 
     public While() {
         typ = "While";

@@ -21,7 +21,7 @@ public class Robson {
         try {
             skaner = new Scanner(new File(filename));
             kod = serializator.fromJson(skaner.useDelimiter("\\Z").next());
-            zmienne = new HashMap<>(); // Nie ma potrzeby trzymać w pamięci zmiennych ze starego kodu.
+            zmienne.clear(); // Nie chcemy trzymać w pamięci zmiennych ze starego kodu.
             skaner.close();
         }
         catch (FileNotFoundException e) {
@@ -30,6 +30,11 @@ public class Robson {
     }
 
     void toJSON(String filename) {
+        if (kod == null) {
+            System.err.println("Trzeba najpierw wywołać poprawnie fromJSON");
+            return;
+        }
+
         BufferedWriter writer = null;
         try {
             writer = new BufferedWriter(new FileWriter(filename));
@@ -46,6 +51,12 @@ public class Robson {
     void toJava(String filename) {
         if (!filename.endsWith(".java")) {
             System.err.println("Plik musi mieć rozszerzenie \".java\".");
+            return;
+        }
+
+        if (kod == null) {
+            System.err.println("Trzeba najpierw wywołać poprawnie fromJSON");
+            return;
         }
 
         BufferedWriter writer = null;
