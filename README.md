@@ -1,20 +1,20 @@
-Plik z istotnymi informacjami dotyczącymi rozwiązania.
+# Robson
 
-Kompilacja:
+### Kompilacja:
 
-Proszę kompilować rozwiązanie będąc w folderze robson linijkami:
-
-javac -cp lib/gson-2.8.7.jar:. Robson.java
-java -cp lib/gson-2.8.7.jar:. Robson
-
+Proszę kompilować rozwiązanie będąc w folderze robson linijkami:  
+  
+javac -cp lib/gson-2.8.7.jar:. Robson.java  
+java -cp lib/gson-2.8.7.jar:. Robson  
+  
 Rozwiązanie może nie kompilować się na innych systemach niż linuks i nie
 jest to tylko kwestia zmiany linijek kompilacji. Nie gwarantuję, że nie
 korzystam w rozwiązaniu z czegoś, co jest charakterystyczne wyłącznie
 dla linuksa. Jak widać, korzystam z biblioteki gson, jednak jest już ona
-umieszczona w folderze lib i nic więcej nie trzeba robić, aby działała.
+umieszczona w folderze lib i nic więcej nie trzeba robić, aby działała.  
 
 
-Uruchamianie i testowanie:
+### Uruchamianie i testowanie:  
 
 W funkcji main w klasie Robson jest opisane jak skorzystać z przykładowej
 klasy TestNWD testującej język Robson. Są tam również przykłady uruchomień
@@ -31,21 +31,21 @@ z następujących folderów:
 Z tych folderów korzystają przykładowe wywołania metod w main, więc
 korzystając z nich, wystarczy tylko zmieniać nazwy plików w tych
 wywołaniach. W ten sposób zachowamy zarówno prostotę testowania jak
-i porządek.
-
+i porządek.  
+  
 Uruchomić program przykladowy_program.java utworzony przez wywołanie
-toJava(przykladowy_program.java) można w najzwyklejszy sposób:
-
-javac przykladowy_program.java
-java przykladowy_program
-
+toJava(przykladowy_program.java) można w najzwyklejszy sposób:  
+  
+javac przykladowy_program.java  
+java przykladowy_program  
+  
 Należy pamiętać, że funkcje toJava i toJSON tworzą pliki, których ścieżka
 zaczyna się w folderze robson, co może "zaśmiecić" rozwiązanie. Dlatego
 zalecam korzystanie z folderów pliki_toJava i pliki_toJSON,
 przykładowo wywołując toJava(pliki_toJava/przykladowy_program.java).
 
 
-Założenia języka Robson:
+### Założenia języka Robson:
 
 W treści wyrażenia są podzielone na arytmetyczne i logiczne, jednak nie
 ma precyzyjnej informacji, co dokładnie może wystąpić w atrybutach
@@ -69,7 +69,7 @@ a może nawet niemożliwe, jeśli chcemy, żeby kod zwracany przez toJava
 był przyzwoity.
 
 
-Kod plików utworzonych przez toJava:
+### Kod plików utworzonych przez toJava:
 
 Myślę, że kod jest dość przejrzysty i jasno widać jego strukturę. Metody
 statytyczne ustawWyn() służą do ustawiania końcowego wyniku rozwiązania.
