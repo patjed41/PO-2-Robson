@@ -3,10 +3,12 @@
 ### Kompilacja:
 
 Proszę kompilować rozwiązanie będąc w folderze robson linijkami:  
-  
-javac -cp lib/gson-2.8.7.jar:. Robson.java  
-java -cp lib/gson-2.8.7.jar:. Robson  
-  
+
+```
+  javac -cp lib/gson-2.8.7.jar:. Robson.java  
+  java -cp lib/gson-2.8.7.jar:. Robson  
+```
+
 Rozwiązanie może nie kompilować się na innych systemach niż linuks i nie
 jest to tylko kwestia zmiany linijek kompilacji. Nie gwarantuję, że nie
 korzystam w rozwiązaniu z czegoś, co jest charakterystyczne wyłącznie
@@ -31,14 +33,16 @@ z następujących folderów:
 Z tych folderów korzystają przykładowe wywołania metod w main, więc
 korzystając z nich, wystarczy tylko zmieniać nazwy plików w tych
 wywołaniach. W ten sposób zachowamy zarówno prostotę testowania jak
-i porządek.  
-  
+i porządek.
+
 Uruchomić program przykladowy_program.java utworzony przez wywołanie
 toJava(przykladowy_program.java) można w najzwyklejszy sposób:  
-  
-javac przykladowy_program.java  
-java przykladowy_program  
-  
+
+```
+  javac przykladowy_program.java  
+  java przykladowy_program  
+```
+
 Należy pamiętać, że funkcje toJava i toJSON tworzą pliki, których ścieżka
 zaczyna się w folderze robson, co może "zaśmiecić" rozwiązanie. Dlatego
 zalecam korzystanie z folderów pliki_toJava i pliki_toJSON,
