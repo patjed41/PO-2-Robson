@@ -18,4 +18,4 @@ To run the program go to `src` directory and execute:
   java -cp lib/gson-2.8.7.jar:. Robson  
 ```
 
-To make program do something uncomment proper lines in `main` function of `src/Robson.java`.
+To make program do something interesting follow instructions (in polish) given in comments of `main` function of `src/Robson.java`.
