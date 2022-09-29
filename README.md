@@ -115,6 +115,3 @@ Każda instrukcja wylicza wartość wyniką używając następujących reguł
 Przewidziany jest także bonus 2 punkty za implementacje rozszerzenia języka o instrukcje
 sterujące Robem z zadania 1. Bonus działa w ten sposób, że punkty z niego uzyskane
 uzupełniają ewentualnie utracone punkty.
-
----
-Copyright of the task's description: MIM UW.
